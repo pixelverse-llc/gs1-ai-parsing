@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parsing GS1 AIs with BarcodeParser and GS1 Digital Link Toolkit</title>
+
+    <!-- load libraries via jsDeliver CDN -->
+    <script src="https://cdn.jsdelivr.net/gh/PeterBrockfeld/BarcodeParser@HEAD/scripts/BarcodeParser.min.js"></script>
+
+    <!-- load GS1 DLT via jsDeliver CDN -->
+    <script src="https://cdn.jsdelivr.net/gh/gs1/GS1DigitalLinkToolkit.js@HEAD/js/GS1DigitalLinkToolkit.js"></script>
+
+    <style>
+        html, body {
+            margin: 0;
+        }
+        main {
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+
+    <header>
+        <h1>GS1 AI parsing</h1>
+    </header>
+
+    <section>
+        <p>Enter the raw barcode data, including non-printable characters (ASCII group separator):</p>
+        <label for="barcode">
+            <input id="barcode" type="text" size="80" value="0108806388269617112302141728021310230214A3263-0121059240ARO4808C">
+        </label>
+    </section>
+
+    <section>
+        <h2>Using BarcodeParser library</h2>
+
+        <p>Parse GS1 AIs using the <a href="https://github.com/PeterBrockfeld/BarcodeParser">BarcodeParser</a> library</p>
+
+        <p id="barcodeParserOutput">-</p>
+
+        <button id="parseBarcodeParserButton">Parse with BarcodeParser</button>
+    </section>
+
+    <section>
+        <h2>Using GS1 Digital Link Toolkit</h2>
+
+        <p>Parse GS1 AIs using the <a href="https://github.com/gs1/GS1DigitalLinkToolkit.js">GS1DigitalLinkToolkit.js</a> library</p>
+
+        <p id="dltOutput">-</p>
+
+        <button id="parseDLTButton">Parse with GS1 DLT</button>
+    </section>
+
+</main>
+
+<script src="index.js"></script>
+
+</body>
+</html>
